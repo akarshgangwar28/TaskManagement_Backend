@@ -10,8 +10,10 @@ const userRoutes = require('./routes/users');
 
 const app = express();
 
+const FRONTEND_URL = process.env.FRONTEND_URL || 'http://localhost:4200';
+
 // Middleware
-app.use(cors());
+app.use(cors({ origin: FRONTEND_URL }));
 app.use(express.json());
 
 // Base route test
