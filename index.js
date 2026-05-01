@@ -6,6 +6,7 @@ const cors = require('cors');
 // Import routes
 const authRoutes = require('./routes/auth');
 const taskRoutes = require('./routes/tasks');
+const userRoutes = require('./routes/users');
 
 const app = express();
 
@@ -21,6 +22,7 @@ app.get('/', (req, res) => {
 // Setup Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/tasks', taskRoutes);
+app.use('/api/users', userRoutes);
 
 // Database connection & Server Startup
 const PORT = process.env.PORT || 5000;
